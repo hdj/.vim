@@ -29,15 +29,23 @@ call vundle#rc()
 " Vundle management
 Bundle 'gmarik/vundle'
 
+" :: Basic editing or moving
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'YankRing.vim'
+Bundle 'Raimondi/delimitMate'
 
 " :: Decorator
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
+"Bundle 'Yggdroot/indentLine'
 
 " :: Coding
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
+Bundle 'SirVer/ultisnips'
 
 " :: Language support
 Bundle 'scrooloose/syntastic'
@@ -51,7 +59,12 @@ set bg=dark
 set nu
 set cursorline
 filetype on 
+filetype plugin on    " Enable filetype-specific plugins
+set tabstop=4
+set shiftwidth=4
+set hlsearch
 
+set t_Co=256 		  " 256 color mode for airline
 "---------------------------------------------------------------------------
 " PLUGIN SETTINGS
 "---------------------------------------------------------------------------
@@ -86,7 +99,38 @@ let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = 'O'
 
 " --- TagBar
-" toggle TagBar with F7
+" toggle TagBar with f7
 nnoremap <silent> <F7> :TagbarToggle<CR>
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
+
+" --- EasyMotion
+ let g:EasyMotion_leader_key = ','
+
+" --- Ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsListSnippets="<c-s-tab>"
+"let g:UltiSnipsSnippetsDir="~/.vim/bundle/ultisnips/UltiSnips"
+
+" --- Airline
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme= 'ubaryd'
+"let g:airline_theme= 'bubblegum'
+"let g:airline_theme= 'powerlineish'
+"let g:airline_theme= 'sol'
+"let g:airline_theme= 'base16'
+"set guifont=Liberation\ Mono\ for\ Powerline\ 10 
+"let g:Powerline_symbols = 'fancy'
+"if !exists('g:airline_symbols')
+  "let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
+
+"let g:airline_left_sep = ''
+
+"set ambiwidth=double
+
+" --- indentLine
+"let g:indentLine_color_term = 239
+"let g:indentLine_color_gui = '#09AA08'
+"let g:indentLine_char = '¦'
