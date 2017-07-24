@@ -1,7 +1,7 @@
 "------------------------------------------------------------------------------
 " VIM setting
 " Ding-Jie Huang
-" Last update: 2013/12/03
+" Last update: 2017/07/24
 "------------------------------------------------------------------------------
 
 
@@ -45,14 +45,16 @@ Bundle 'fholgado/minibufexpl.vim'
 
 " :: Coding
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+"Plugin 'joonty/vdebug'
 
 " :: Language support
 Bundle 'scrooloose/syntastic'
 Bundle 'klen/python-mode'
+
 "---------------------------------------------------------------------------
 " General Settings
 "---------------------------------------------------------------------------
@@ -69,6 +71,9 @@ set hlsearch
 syntax on
 set t_Co=256 		  " 256 color mode for airline
 set fencs=utf-8,big5
+
+command! W :execute ':silent w !sudo tee % > /dev/null' | :edit! 			"For write with root privilege
+
 "---------------------------------------------------------------------------
 " PLUGIN SETTINGS
 "---------------------------------------------------------------------------
