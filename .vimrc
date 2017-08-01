@@ -54,6 +54,7 @@ Bundle 'honza/vim-snippets'
 " :: Language support
 Bundle 'scrooloose/syntastic'
 Bundle 'klen/python-mode'
+Bundle 'timothycrosley/isort' 
 
 "---------------------------------------------------------------------------
 " General Settings
@@ -175,3 +176,6 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" --- isort
+autocmd FileType python nnoremap <leader>i :!isort %<CR><CR>
